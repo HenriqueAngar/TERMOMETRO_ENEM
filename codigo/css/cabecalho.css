@@ -1,0 +1,13 @@
+#logo {
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.cabecalho_texto {
+    color: var(--azul);
+    font-size: 22px;
+    font-weight: bolder;
+    font-family: var(--texto);
+    max-width: 1400px;
+}

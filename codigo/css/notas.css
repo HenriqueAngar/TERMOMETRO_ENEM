@@ -1,0 +1,53 @@
+.nota_geral-box {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--titulo);
+    font-weight: bolder;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.nota_geral-nota {
+
+    color: var(--vermelho);
+    font-size: 35px;
+}
+
+.nota_geral-desc {
+    color: var(--azulForte);
+    font-size: 25px;
+}
+
+#areas {
+    max-width: 1400px;
+}
+
+.nota_area-box {
+    display: inline-flex;
+    justify-content: space-between;
+    margin: 15px auto;
+}
+
+.nota_area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 30px;
+    text-align: center;
+}
+
+.nota_area-nota,
+.nota_area-desc {
+    font-family: var(--titulo);
+    font-weight: bolder;
+}
+
+.nota_area-nota {
+    color: var(--amarelo);
+    font-size: 30px;
+}
+
+.nota_area-desc {
+    color: var(--azulForte);
+    margin-top: 5px;
+}

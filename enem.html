@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="content-type" content="application/vnd.ms-excel; charset=UTF-8">
+
+    <!--ESTILOS GERAIS-->
+    <link rel="stylesheet" href="codigo/css/reset.css">
+    <link rel="stylesheet" href="codigo/css/base.css">
+
+    <!--BODY-->
+    <link rel="stylesheet" href="codigo/css/cabecalho.css">
+    <link rel="stylesheet" href="codigo/css/form.css">
+    <link rel="stylesheet" href="codigo/css/notas.css">
+
+
+    <title>Termômetro Enem</title>
+</head>
+
+<body onload="iniciar();">
+
+    <section id="cabecalho">
+        <img id="logo" src='codigo/imgs/LOGO.png' style="width: 300px;">
+        <div class="cabecalho_texto">
+            Esta é uma ferramenta de machine learning capaz de predizer uma nota provável a partir do perfil estudantil
+        </div>
+
+    </section>
+    <div class="wide_border"></div>
+    <section id="form">
+        <div class="form_container">
+            <div class="form_container-desc">Preencha o formulário para obter o resultado da simulação
+            </div>
+            <div class="vertical_border1"></div>
+            <div class="form_container-box">
+                <div class="form_container-level">
+                    <div class="form_box">
+                        <div class="form_desc">SEXO</div>
+                        <select class="form_input" name="entrada">
+                            <option value="0">FEMININO</option>
+                            <option value="1">MASCULINO</option>
+                        </select>
+                    </div>
+                    <div class="form_box">
+                        <div class="form_desc">ETNIA</div>
+                        <select class="form_input" name="entrada">
+                            <option value="0">NÃO SEI</option>
+                            <option value="1">BRANCA</option>
+                            <option value="2">PRETA</option>
+                            <option value="3">PARDA</option>
+                            <option value="4">AMARELA</option>
+                            <option value="5">INDÍGENA</option>
+                        </select>
+                    </div>
+                    <div class="form_box">
+                        <div class="form_desc">ESCOLA</div>
+                        <select class="form_input" name="entrada">
+                            <option value="2">PÚBLICA</option>
+                            <option value="3">PRIVADA</option>
+                        </select>
+                    </div>
+                    <div class="form_box">
+                        <div class="form_desc">LÍNGUA<BR>ESTRANGEIRA</div>
+                        <select class="form_input" name="entrada">
+                            <option value="0">INGLÊS</option>
+                            <option value="1">ESPANHOL</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="thin_border"></div>
+        <div class="form_container">
+            <div class="form_container-desc">Preencha as escalas a seguir para os critérios a atribuindo notas de
+                0.0 a
+                10.0 para os campos.<br><br>Considere 0.0 como o menor valor possível, 5.0 como a média e 10.0 como
+                o
+                maior valor possível.</div>
+            <div class="vertical_border2"></div>
+            <div class="form_container-box">
+                <div class="form_container-level">
+                    <div class="form_box">
+                        <div class="form_desc">RENDA<br>FAMILIAR</div>
+                        <input name="entrada" class="form_input" type="number" id="numero" name="numero" step="any"
+                            value="10">
+                    </div>
+
+                    <div class="form_box">
+                        <div class="form_desc">DEDICAÇÃO ESTUDOS<BR>PARA O ENEM</div>
+                        <input name="entrada" class="form_input" type="number" id="numero" name="numero" step="any"
+                            value="10">
+                    </div>
+                    <div class="form_box">
+                        <div class="form_desc">NÍVEL DE ACESSO<BR>A INFORMAÇÃO</div>
+                        <input name="entrada" class="form_input" type="number" id="numero" name="numero" step="any"
+                            value="10">
+                    </div>
+                </div>
+                <div class="form_container-level">
+                    <div class="form_box">
+                        <div class="form_desc">PADRÃO DE VIDA<BR>E MORADIA</div>
+                        <input name="entrada" class="form_input" type="number" id="numero" name="numero" step="any"
+                            value="10">
+                    </div>
+                    <div class="form_box">
+                        <div class="form_desc">CARREIRA E EDUCAÇÃO<BR>RESPONSPAVEIS</div>
+                        <input name="entrada" class="form_input" type="number" id="numero" name="numero" step="any"
+                            value="10">
+                    </div>
+                    <button id="submit">ENVIAR</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="thin_border"></div>
+        </div>
+    </section>
+    <section id="media">
+        <div class="nota_geral-box">
+            <div id='geral' class="nota_geral-nota">1000</div>
+            <div class="nota_geral-desc">NOTA<BR>GERAL</div>
+        </div>
+    </section>
+    <div class="wide_border"></div>
+    <section id="areas">
+        <div class="nota_area-box">
+            <div class="nota_area">
+                <div class="nota_area-nota" name="saida">1000</div>
+                <div class="nota_area-desc">CIÊNCIAS<BR>HUMANAS</div>
+            </div>
+            <div class="nota_area">
+                <div class="nota_area-nota" name="saida">1000</div>
+                <div class="nota_area-desc">CIÊNCIAS<BR>DA NATUREZA</div>
+            </div>
+            <div class="nota_area">
+                <div class="nota_area-nota" name="saida">1000</div>
+                <div class="nota_area-desc">LINGUAGENS E<BR>COMUNICAÇÃO</div>
+            </div>
+            <div class="nota_area">
+                <div class="nota_area-nota" name="saida">1000</div>
+                <div class="nota_area-desc">MATEMÁTICA E<BR>SUAS TECNOLOGIAS</div>
+            </div>
+            <div class="nota_area">
+                <div class="nota_area-nota" name="saida">1000</div>
+                <div class="nota_area-desc">REDAÇÃO</div>
+            </div>
+        </div>
+    </section>
+    <section id="rodape"></section>
+
+    </section>
+
+    <script src="codigo/js/main.js"></script>
+</body>
+
+</html>

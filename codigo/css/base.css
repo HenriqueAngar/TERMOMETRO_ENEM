@@ -1,0 +1,63 @@
+:root {
+    --branco: #ffffff;
+
+    --automatico: #272727;
+
+    --azulForte: #044884;
+
+    --azul: #00A9E8;
+
+    --azulClaro: #89D1F0;
+
+    --amarelo: #F79F08;
+
+    --vermelho: #A71B2E;
+
+    --titulo: 'Roboto', sans-serif;
+
+    --texto: 'Calibri', sans-serif;
+
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.wide_border {
+    background-color: var(--azulClaro);
+    height: 8.5px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.thin_border {
+
+    background-color: var(--azulClaro);
+    height: 3px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.vertical_border1,
+.vertical_border2 {
+    background-color: var(--azulClaro);
+    margin: 10px;
+    padding: 40px 3px;
+}
+
+.vertical_border2 {
+    padding: 100px 3px;
+}
