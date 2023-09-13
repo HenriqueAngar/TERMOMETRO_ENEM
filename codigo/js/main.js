@@ -29,8 +29,8 @@ function inserirNotas() {
     let areas = document.getElementsByClassName("nota_area-nota");
 
     for (i = 0; i < areas.length; i++) {
-        areas[i].innerText = 600 + 20 * i;
-        soma += 600 + 20 * i;
+        areas[i].innerText = 600 + 25 * i;
+        soma += 600 + 25 * i;
     }
 
     let media = soma / 5;
