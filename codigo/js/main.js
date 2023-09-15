@@ -1,11 +1,19 @@
 
 function iniciar() {
     let botao = document.getElementById('submit');
-    botao.addEventListener("click", () => { calcularNota() }
+    botao.addEventListener("click", () => { main() }
     )
 }
 
-function calcularNota() {
+function main() {
+
+    let inputs = getInputs()
+    let req = new Req(inputs)
+    let response = requestNotas(req)
+    inserirNotas(response)
+}
+
+function getInputs() {
 
     let values = []
     let inputs = document.getElementsByClassName('form_input')
@@ -15,25 +23,76 @@ function calcularNota() {
         values.push(inputs[i].value)
     }
 
-    enviar(values)
+    return values
 }
 
-function enviar(info) {
-    console.log(info)
-    inserirNotas()
+class Req {
+
+    constructor(dt) {
+        this.TP_SEXO = parseInt(dt[0]);
+        this.TP_COR_RACA = parseInt(dt[1]);
+        this.TP_ESCOLA = parseInt(dt[2]);
+        this.TP_LINGUA = parseInt(dt[3]);
+        this.RENDA = parseInt(dt[4]);
+        this.FOCO = parseInt(dt[5]);
+        this.INFO = parseInt(dt[6]);
+        this.CASA = parseInt(dt[7]);
+        this.PAIS = parseInt(dt[8]);
+    }
 }
 
-function inserirNotas() {
 
-    let soma = 0
-    let areas = document.getElementsByClassName("nota_area-nota");
 
-    for (i = 0; i < areas.length; i++) {
-        areas[i].innerText = 600 + 25 * i;
-        soma += 600 + 25 * i;
+function requestNotas(info) {
+
+    const url = new URL('http://127.0.0.1:5000/predict');
+    for (const chave in info) {
+        url.searchParams.append(chave, info[chave]);
     }
 
-    let media = soma / 5;
+    const options = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: null,
+        mode: 'no-cors'
+    };
+
+    fetch(url, options)
+        .then(response => {
+            if (response.status === 200) {
+                return response;
+            } else {
+                throw new Error('Erro na requisição.');
+            }
+        })
+        .then(data => {
+
+            return data
+        })
+        .catch(error => {
+            console.error(error);
+        });
+}
+
+
+function inserirNotas(notas) {
+
+    let areas = document.getElementsByClassName("nota_area-nota");
+
+    areas[0].innerText = notas.ch
+    areas[1].innerText = notas.cn
+    areas[2].innerText = notas.mt
+    areas[3].innerText = notas.lc
+    areas[4].innerText = notas.red
+
+    let soma = 0
+    for (i = 0; i < areas.length; i++) {
+        soma += parseInt(areas[i].innerText)
+    }
+
+    let media = Math.round(soma / 5);
     let geral = document.getElementById('geral')
     geral.innerText = media
 }
