@@ -50,30 +50,19 @@ function requestNotas(info) {
         url.searchParams.append(chave, info[chave]);
     }
 
-    const options = {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: null,
-        mode: 'no-cors'
-    };
-	
-	console.log(url)
-    fetch(url, options)
+    console.log(url)
+    fetch(url)
         .then(response => {
-            if (response.status === 200) {
-                return response;
-            } else {
-                throw new Error('Erro na requisição.');
+            if (!response.ok) {
+                throw new Error(`Erro na solicitação: ${response.status}`);
             }
+            return response.json();
         })
         .then(data => {
-
             return data
         })
         .catch(error => {
-            console.error(error);
+            console.error('Erro na solicitação:', error);
         });
 }
 
