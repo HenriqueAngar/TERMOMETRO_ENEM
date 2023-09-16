@@ -5,11 +5,11 @@ function iniciar() {
     )
 }
 
-function main() {
+async function main() {
 
     let inputs = getInputs()
     let req = new Req(inputs)
-    let response = requestNotas(req)
+    let response = await requestNotas(req)
     inserirNotas(response)
 }
 
@@ -45,30 +45,29 @@ class Req {
 
 function requestNotas(info) {
 
-    const url = new URL('http://127.0.0.1:5000/predict');
+    const url = new URL('http://127.0.0.2:5000/predict');
     for (const chave in info) {
         url.searchParams.append(chave, info[chave]);
     }
 
-    console.log(url)
-    fetch(url)
+    let data = fetch(url)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Erro na solicitação: ${response.status}`);
             }
             return response.json();
         })
-        .then(data => {
-            return data
-        })
         .catch(error => {
             console.error('Erro na solicitação:', error);
         });
+
+    return data
 }
 
 
 function inserirNotas(notas) {
 
+    console.log(notas)
     let areas = document.getElementsByClassName("nota_area-nota");
 
     areas[0].innerText = notas.ch
