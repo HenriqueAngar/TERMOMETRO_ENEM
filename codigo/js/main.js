@@ -45,7 +45,7 @@ class Req {
 
 function requestNotas(info) {
 
-    const url = new URL('https://henriqueangar.github.io/TERMOMETRO_ENEM//predict');
+    const url = new URL('https://henriqueangar.github.io/TERMOMETRO_ENEM/predict');
     for (const chave in info) {
         url.searchParams.append(chave, info[chave]);
     }
