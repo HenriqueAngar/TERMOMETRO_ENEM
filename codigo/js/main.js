@@ -45,7 +45,7 @@ class Req {
 
 function requestNotas(info) {
 
-    const url = new URL('http://127.0.0.1:5000/predict');
+    const url = new URL('https://henriqueangar.github.io/TERMOMETRO_ENEM//predict');
     for (const chave in info) {
         url.searchParams.append(chave, info[chave]);
     }
@@ -58,7 +58,8 @@ function requestNotas(info) {
         body: null,
         mode: 'no-cors'
     };
-
+	
+	console.log(url)
     fetch(url, options)
         .then(response => {
             if (response.status === 200) {
