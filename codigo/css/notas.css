@@ -51,3 +51,28 @@
     color: var(--azulForte);
     margin-top: 5px;
 }
+
+@media (max-width: 400px) {
+    .nota_area-box {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: none;
+    }
+
+    .nota_area {
+        display: flex;
+        flex-direction: column;
+        margin: 15px 10px;
+        text-align: center;
+    }
+
+    .nota_area-nota {
+        font-size: 25px;
+    }
+
+    .nota_area-desc {
+        font-size: 16px;
+    }
+}

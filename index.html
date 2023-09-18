@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="codigo/css/cabecalho.css">
     <link rel="stylesheet" href="codigo/css/form.css">
     <link rel="stylesheet" href="codigo/css/notas.css">
+    <link rel="stylesheet" href="codigo/css/rodape.css">
 
 
     <title>Termômetro Enem</title>
@@ -26,14 +27,14 @@
     <section id="cabecalho">
         <img id="logo" src='codigo/imgs/LOGO.png' style="width: 300px;">
         <div class="cabecalho_texto">
-            Esta é uma ferramenta de machine learning capaz de predizer uma nota provável a partir do perfil estudantil
+            Esta é uma IA criada para predizer uma nota provável a partir de um perfil socioeconômico de estudantes.
         </div>
 
     </section>
     <div class="wide_border"></div>
     <section id="form">
         <div class="form_container">
-            <div class="form_container-desc">Preencha o formulário para obter o resultado da simulação
+            <div class="form_container-desc">Preencha os campos para obter o resultado da simulação:
             </div>
             <div class="vertical_border1"></div>
             <div class="form_container-box">
@@ -76,39 +77,38 @@
         <div class="thin_border"></div>
         <div class="form_container">
             <div class="form_container-desc">
-                Preencha as escalas a seguir para os critérios percentual de qualidade de 0 a 100.
-                <br><br>Considere 0.0 como muito ruim, 50.0 como a média e 100.0 como excepcional<br><br>
-                ex: Uma família com renda 60 está levemente acima da média nacional
+                Preencha os parâmetros com valores entre 0 a 100 em relação a média brasileira.
+                <br><br>Considere 0.0 como muito abaixo, 50.0 como na média e 100.0 como muito acima da média.
             </div>
             <div class="vertical_border2"></div>
             <div class="form_container-box">
                 <div class="form_container-level">
-                    <div class="form_box">
-                        <div class="form_desc">RENDA<br>FAMILIAR</div>
-                        <input name="entrada" class="form_input" type="number" id="numero" name="numero" step="any"
+                    <div class="form_box2">
+                        <div class="form_desc2">RENDA<br>FAMILIAR</div>
+                        <input name="entrada" class="form_input2" type="number" id="numero" name="numero" step="any"
                             value="50">
                     </div>
 
-                    <div class="form_box">
-                        <div class="form_desc">DEDICAÇÃO ESTUDOS<BR>PARA O ENEM</div>
-                        <input name="entrada" class="form_input" type="number" id="numero" name="numero" step="any"
+                    <div class="form_box2">
+                        <div class="form_desc2">DEDICAÇÃO ESTUDOS<BR>PARA O ENEM</div>
+                        <input name="entrada" class="form_input2" type="number" id="numero" name="numero" step="any"
                             value="50">
                     </div>
-                    <div class="form_box">
-                        <div class="form_desc">NÍVEL DE ACESSO<BR>A INFORMAÇÃO</div>
-                        <input name="entrada" class="form_input" type="number" id="numero" name="numero" step="any"
+                    <div class="form_box2">
+                        <div class="form_desc2">NÍVEL DE ACESSO<BR>A INFORMAÇÃO</div>
+                        <input name="entrada" class="form_input2" type="number" id="numero" name="numero" step="any"
                             value="50">
                     </div>
                 </div>
                 <div class="form_container-level">
-                    <div class="form_box">
-                        <div class="form_desc">PADRÃO DE VIDA<BR>E MORADIA</div>
-                        <input name="entrada" class="form_input" type="number" id="numero" name="numero" step="any"
+                    <div class="form_box2">
+                        <div class="form_desc2">PADRÃO DE VIDA<BR>E MORADIA</div>
+                        <input name="entrada" class="form_input2" type="number" id="numero" name="numero" step="any"
                             value="50">
                     </div>
-                    <div class="form_box">
-                        <div class="form_desc">CARREIRA E EDUCAÇÃO<BR>RESPONSPAVEIS</div>
-                        <input name="entrada" class="form_input" type="number" id="numero" name="numero" step="any"
+                    <div class="form_box2">
+                        <div class="form_desc2">CARREIRA E EDUCAÇÃO<BR>RESPONSPAVEIS</div>
+                        <input name="entrada" class="form_input2" type="number" id="numero" name="numero" step="any"
                             value="50">
                     </div>
                     <button id="submit">ENVIAR</button>
@@ -150,7 +150,14 @@
             </div>
         </div>
     </section>
-    <section id="rodape"></section>
+    <section id="rodape">
+        <h3 class="disclaimer">Atenção! Os resultados aqui exibidos são apenas uma tendência para o perfil baseado
+            em dados do enem 2022. Este modelo foi treinado a partir dos microdados do enem 2022, disponíveis em:
+            <a class='link' href='https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem'>
+                datagov.
+            </a>
+        </h3>
+    </section>
 
     </section>
 

@@ -16,11 +16,12 @@ async function main() {
 function getInputs() {
 
     let values = []
-    let inputs = document.getElementsByClassName('form_input')
+    let names = ['form_input', 'form_input2']
 
-    for (i = 0; i < inputs.length; i++) {
+    for (j = 0; j < 2; j++) {
 
-        values.push(inputs[i].value)
+        let inputs = document.getElementsByClassName(names[j])
+        for (i = 0; i < inputs.length; i++) { values.push(inputs[i].value) }
     }
 
     return values
@@ -67,7 +68,6 @@ function requestNotas(info) {
 
 function inserirNotas(notas) {
 
-    console.log(notas)
     let areas = document.getElementsByClassName("nota_area-nota");
 
     areas[0].innerText = notas.ch

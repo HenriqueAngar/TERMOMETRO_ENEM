@@ -61,3 +61,43 @@ body {
 .vertical_border2 {
     padding: 100px 3px;
 }
+
+@media (max-width: 1000px) {
+    body {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .wide_border,
+    .wide_border {
+        width: auto;
+        max-width: 500px;
+    }
+
+    .vertical_border1,
+    .vertical_border2 {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        max-width: 350px;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .wide_border,
+    .wide_border {
+        width: auto;
+        max-width: 350px;
+    }
+
+    .vertical_border1,
+    .vertical_border2 {
+        margin: 0px;
+        padding: 0px;
+    }
+}
