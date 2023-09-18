@@ -46,11 +46,12 @@ class Req {
 
 function requestNotas(info) {
 
-    const url = new URL('http://127.0.0.2:5000/predict');
+    const url = new URL('http://termometroenem.azurewebsites.net/predict');
     for (const chave in info) {
         url.searchParams.append(chave, info[chave]);
     }
 
+    console.log(url)
     let data = fetch(url)
         .then(response => {
             if (!response.ok) {
