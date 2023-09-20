@@ -82,7 +82,7 @@ body {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     body {
         max-width: 350px;
         margin: 0 auto;
