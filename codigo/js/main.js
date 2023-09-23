@@ -46,7 +46,7 @@ class Req {
 
 function requestNotas(info) {
 
-    const url = new URL('http://termoenem.azurewebsites.net/predict');
+    const url = new URL('https://termoenem.azurewebsites.net/predict');
     for (const chave in info) {
         url.searchParams.append(chave, info[chave]);
     }
